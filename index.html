@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Te caso y más - ¡Celebra tu boda de la manera mas divertida!</title>
+    <link rel="canonical" href="index.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="description" content="'Te caso y más' es..." />
+    <meta property="og:type" content="web">
+    <meta property="og:title" content="Te caso y más - ¡Celebra tu boda de la manera mas divertida!">
+    <meta property="og:url" content="http://www.tecasoymas.com/">
+    <meta property="og:image" content="http://www.tecasoymas.com/images/fav-logo.png">
+    <meta property="og:description" content="'Te caso y más' es...">
+
+    <link href="css/style.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/jquery.scrollTo-1.4.3.1.js" type="text/javascript"></script>
+    <script src="js/jquery.localscroll-1.2.7.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+			$("#nav").localScroll({duration:800});
+		});
+		
+		function sendMessage(){
+			name = document.getElementById('name').value;
+			subname = document.getElementById('subname').value;
+			subject = document.getElementById('subject').value;
+			email = document.getElementById('email').value;
+			message = document.getElementById('message').value;
+			
+			$.ajax
+			({
+				type: "POST",
+				url: "ajax_message.php",
+				data: "name=" + name + "&subname=" + subname + "&subject=" + subject + "&email=" + email + "&message=" + message,
+				cache: false,
+				success: function(html)
+				{
+					$("#alerts").empty();
+					$("#alerts").append(html);
+					document.getElementById("new_message").reset();
+				} 
+			});	
+			
+		}
+    </script>
+    <meta content="authenticity_token" name="csrf-param" />
+	<meta content="YOPrwgNS5yNzqABNXHM62bXpLW+u0pAdUr17uD0hP9I=" name="csrf-token" />
+    <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+  <body class="bck landing">
+    <div id="fb-root"></div>
+      
+
+    <!-- Space for place the alerts -->
+<div id="alerts"></div>
+
+<!-- Header -->
+<header class="padding_top padding_bottom fixed shadow">
+  <div class="row text color black">
+    <div class="column_5">
+      <a href="#" class="img-logo no-text">Te Caso y Mas</a>
+    </div>
+    <nav class="column_7 right text source">
+      <ul class="navigation unstyled right">
+        <li data-slide="1">Bienvenido</li>
+        <li data-slide="2">Servicios</li>
+        <li data-slide="7">Y más...</li>
+        <li data-slide="8">Contacta</li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- First slide -->
+<section class="paddingbottom slide bck tunnel landing text center color white" data-slide="1">
+  <!-- <div class="social-twitter hide-phone">
+  <a href="https://twitter.com/mindstertalent" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @mindstertalent</a> 
+</div>-->
+
+<!-- <div class="social-facebook hide-phone">
+  <div class="fb-like" data-href="http://www.facebook.com/pages/Mindster/418568181560902" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+</div> -->
+  <div class="row">
+    <div class="column_10 offset_1">
+      <h2 class="text book margin_bottom color theme">Cambiamos sentimientos por palabras</h2>
+      <!-- <h5 class="text book margin_bottom color theme">Celebra tu boda de la manera mas divertida</h5> -->
+    </div>
+  </div>
+  <div class="row">
+  <div class="column_8 offset_2">
+    <div class="video-container">
+      <iframe src="http://player.vimeo.com/video/78270983?color=ffffff&title=0&byline=0&portrait=0" width="500" height="280" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="column_2 offset_5" style="
+    display: block;
+    margin-top: 80px;
+    /* background: black; */">
+    </div>
+  </div>
+
+
+</section>
+
+<!-- Second slide - Servicios -->
+<section class="slide shadow bck padding" data-slide="2">
+  <div class="row text center margin_bottom">
+    <div class="column_8 offset_2">
+      <h1 class="text book color theme">Te caso</h1>
+      <p class="text book margin_top">Especialidad de la casa. Es tu día. Diviertete. Lo preparamos para tí.</p>
+    </div>
+  </div>
+  <br>
+  <div class="row text center book" id="nav">
+    <a href="#headline1"><div class="column_3 margin_bottom">
+      <div class="img-circle" id="converse" ></div>
+      <h5>Casamos. A todos</h5>
+      <small>¿Qué quieres? Lo hacemos.</small>
+    </div></a>
+    <a href="#headline2"><div class="column_3 margin_bottom">
+      <div class="img-circle" id="llave" ></div>
+      <h5>¿Me quieres?</h5>
+      <small>Te quiere. A pedírselo.</small>
+    </div></a>
+    <a href="#headline3"><div class="column_3 margin_bottom">
+      <div class="img-circle" id="boda" ></div>
+      <h5 class="">Donde y cómo. Te lo decimos</h5>
+      <small>¿Dónde quieres? Lo encontramos.</small>
+    </div></a>
+    <a href="#headline4"><div class="column_3 margin_bottom">
+      <div class="img-circle" id="regalo" ></div>
+      <h5>Tenemos EL regalo</h5>
+      <small>¿Alguna idea nueva? Muchas. Ven y pregúntanos.</small>
+    </div></a>
+  </div>
+</section>
+
+<!-- Third slide - Enlaces matrimoniales -->
+<section class="slide bck wedding shadow slide2 padding" data-slide="3" id="headline1">
+
+  <div class="row text center thin margin_bottom">
+    <div class="column_8 offset_2 opaco">
+      <h1 class="text book color theme">Casamos. A todos.</h1>
+      <p class="text book margin_top color">
+      La especialidad que nos diferencia. Si el juzgado te resulta impersonal y la iglesia no es tu opción, somos tu alternativa. Unimos sentimientos. Preparamos la boda, y con especial atención la ceremonia, que además y sobre todo, oficiamos. La validez será, la que vosotros queráis. Sin duda, el  complemento perfecto al juzgado. Sin renunciar a tus sueños.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<!-- Fourth slide - Eventos a medida -->
+<section class="slide bck shadow slide2 padding" data-slide="4" id="headline2">
+
+  <div class="row text center thin margin_bottom">
+    <div class="column_6 offset_1 paddingtop">
+      <h1 class="text book color theme">¿Me quieres? Pídelo distinto</h1>
+      <p class="text book margin_top">Ese momento, podemos hacerlo único. Y grabarlo para recordarlo para siempre. Y adornarlo para que diga <br>SÍ seguro. Con público o en privado. Atrevido o tierno. Pedida de boda a la carta.
+</p>
+    </div>
+    <div class="column_4">
+     <div class="img-circle grande" id="llave" ></div>
+    </div>
+  </div>
+  
+</section>
+
+<!-- Fifth slide - Donde y como -->
+<section class="slide bck sitio shadow slide2 padding" data-slide="5" id="headline3">
+
+<div class="row text center thin margin_bottom">
+    <div class="column_8 offset_2 opaco">
+      <h1 class="text book color theme">Dónde y Cómo. Te lo decimos.</h1>
+      <p class="text book margin_top color">Porque no hay mucho tiempo, o el que tienes, lo necesitas para otras cosas. Porque contar con nosotros, es la opción. Encontramos el mejor emplazamiento para la celebración de tu boda. Y el menú que se come. Y la música que se baila. Algo nuevo: Buscar lo que te gusta, y sobre eso, preparar la boda completa. <br>Más cosas, ven y pregúntanos. </p>
+    </div>
+    
+    
+  </div>
+</section>
+
+<!-- Sixth slide - Regalo -->
+<section class="slide bck shadow slide2 padding" data-slide="6" id="headline4">
+  <div class="row text center thin margin_bottom">
+    <div class="column_4">
+      <div class="img-circle grande" id="regalo" ></div>
+    </div>
+	<div class="column_6 offset_1 paddingtop">
+      <h1 class="text book color theme">Tenemos EL regalo</h1>
+      <p class="text book margin_top">Nuestras ideas para regalar, o que te regalen, son diferentes. Preparamos listas de bodas, de comuniones, o de lo que quieras celebrar. Te sorprenderás, y lo mejor: conseguirás sorprender. 
+
+
+</p>
+    </div>
+  </div>
+</section>
+
+<!-- Seventh slide -->
+<section class="slide shadow slide2 bck padding" data-slide="7">
+  <div class="row text center thin margin_bottom">
+    <div class="column_8 offset_2">
+      <h1 class="text book color theme">Y más...</h1>
+      <p class="text book margin_top">Porque podemos hacer más por ti. Pasa y mira. Estas son, nuestras otras propuestas.</p>
+    </div>
+  </div>
+  <br>
+  <div class="row text center book">
+    <div class="column_3 margin_bottom">
+      <!-- <i class="img-loudspeaker"></i> -->
+      <div class="img-circle" id="fiesta" ></div>
+      <h5>Un motivo. Una fiesta</h5>
+      <small>¿Cualquier cosa? Cualquiera. Si tú quieres celebrar, nosotros contigo.</small>
+    </div>
+    <div class="column_3 margin_bottom">
+      <div class="img-circle" id="carta" ></div>
+      <h5 class="">La carta que dice del corazón.</h5>
+      <small>¿Y si mi corazón, me “dicta” un dossier? Pues también. Lo preparamos. <br>Y nos encantan, las cartas de amor. </small>
+    </div>
+    <div class="column_3 margin_bottom">
+      <div class="img-circle" id="cuento" ></div>
+      <h5>Un cuento. Dos cuentos. Tres cuentos….¿Te lo cuento?</h5>
+      <small>¿Con forma de cuento de verdad? Claro. Y con los protagonistas que quieras.</small>
+    </div>
+    <div class="column_3 margin_bottom">
+      <div class="img-circle" id="banco" ></div>
+      <h5>Adiós para siempre. Despedidas con mimo</h5>
+      <small>Quieres decir, y no puedes. Quieres su música, sus recuerdos. Y una nota en prensa diferente. Estamos a tu lado. <br> Con toda nuestra atención.</small>
+    </div>
+  </div>
+</section>
+
+<!-- Eighth slide -->
+<section class="slide bck bosque landing text center color white" data-slide="8">
+  <div class="row">
+    <div class="column_8 offset_2">
+      <h2 class="text book margin_bottom">Para preguntarnos más cosas</h2>
+      <p class="text book margin_bottom">Por si tienes dudas.<br>O alguna sugerencia. <br> Escríbenos, con una dirección de correo válida. Tendrás nuestra respuesta al momento. <br>Gracias, por querer saber de nosotros.</p>
+    </div>
+  </div>
+    <div class="row">
+    <div class="column_6 offset_3 form">
+      <form accept-charset="UTF-8" action="" class="new_subscription" data-remote="true" id="new_message" method="post">
+      
+        <input class="large float left half" id="name" name="contact[name]" placeholder="Nombre" size="30" type="text" />
+        <input class="large float left half" id="subname" name="contact[subname]" placeholder="Apellidos" size="30" type="text" />
+        <input class="large float left" id="subject" name="contact[subject]" placeholder="Asunto" size="30" type="text" />
+        <input class="large float left" id="email" name="contact[email]" placeholder="Introduzca su correo electrónico" size="30" type="text" />
+        <textarea class="large float left" id="message" name="contact[message]" placeholder="Escriba su mensaje"></textarea>
+        <button class="button large float left" id="send" type="submit" onClick="javascript:sendMessage();" style="
+    margin-left: 30%;
+    /* margin-top: -20px; */
+">
+          <span>Enviar</span>
+		</button>        
+        <!--<small class="text small">You will receive a welcome email, and as soon as we launch our beta, an invitation code</small>-->
+</form>    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bck darkest text color white">
+  <div class="row">
+    <div class="column_5">
+      <span class="text bold display block">© TeCasoYMas 2013</span>
+      <small><a href="http://es.wikipedia.org/wiki/C%C3%B3rdoba_(Espa%C3%B1a)">Córdoba</a>, España.</small>
+      <br>
+    </div>
+    <div class="column_4">
+      <span class="text bold display block">¿Quieres saber más?</span>
+      <small>Puedes <a href="mailto:aespino@tecasoymas.com?subject=Hola!">preguntarnos</a></small><br>
+      <small>(+34) 665 42 91 37</small>
+    </div>
+    <div class="column_3">
+      <span class="text bold display block">¡Siguenos!</span>
+      <span class="text big display block">
+        <a href="http://www.facebook.com/tecasoymas" target="_blank" class="no-text img-facebook" style="margin-left: 26px;">Facebook</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>
+
+<!-- Localized -->
